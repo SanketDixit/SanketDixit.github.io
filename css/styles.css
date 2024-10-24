@@ -30,6 +30,8 @@ header h1 {
 .scroll-container {
     flex: 1;
     overflow-y: scroll;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 /* Container */
@@ -44,10 +46,14 @@ header h1 {
 /* Section Styling */
 section {
     padding: 20px 0;
-    height: 100vh; /* Full viewport height */
+    min-height: 80vh; /* Each section takes most of the viewport height */
     opacity: 0; /* Sections start fully transparent */
-    transform: translateY(50px); /* Slight initial translation */
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    transform: translateY(50px); /* Initial translation for sliding effect */
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    background-color: #e8f5e9; /* Same background for all sections */
+    border-radius: 8px;
+    padding: 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
 section.active {
@@ -76,34 +82,14 @@ section.active {
     flex: 2;
 }
 
-/* Skills Section Styling */
-.section-skills {
-    background-color: #e0f7fa;
-}
-
-/* Expertise Section Styling */
-.section-expertise {
-    background-color: #fce4ec;
-}
-
-/* Professional Experience Section Styling */
-.section-experience {
-    background-color: #f3e5f5;
-}
-
-/* Languages Section Styling */
-.section-languages {
-    background-color: #e8f5e9;
-}
-
-/* Visa Section Styling */
-.section-visa {
-    background-color: #fff3e0;
-}
-
-/* Hobbies Section Styling */
+/* Remove individual backgrounds for consistency */
+.section-skills,
+.section-expertise,
+.section-experience,
+.section-languages,
+.section-visa,
 .section-hobbies {
-    background-color: #ede7f6;
+    background-color: transparent;
 }
 
 /* Footer Styling */
@@ -113,4 +99,6 @@ footer {
     text-align: center;
     padding: 10px;
     position: relative;
+    bottom: 0;
+    width: 100%;
 }
