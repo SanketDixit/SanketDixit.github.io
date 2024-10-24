@@ -45,7 +45,6 @@ header h1 {
 
 /* Section Styling */
 section {
-    padding: 20px 0;
     min-height: 80vh; /* Each section takes most of the viewport height */
     opacity: 0; /* Sections start fully transparent */
     transform: translateY(50px); /* Initial translation for sliding effect */
