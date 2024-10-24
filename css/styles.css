@@ -1,3 +1,4 @@
+/* General Body Styling */
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
@@ -5,11 +6,15 @@ body {
     padding: 0;
     background-color: #f4f4f4;
 }
+
+/* Container */
 .container {
     width: 80%;
     margin: auto;
     overflow: hidden;
 }
+
+/* Header Styling */
 header {
     background: #333;
     color: #fff;
@@ -20,28 +25,18 @@ header h1 {
     margin: 0;
     font-size: 2.5em;
 }
+
+/* Section Styling */
 section {
     padding: 20px 0;
+    opacity: 0.3;
+    transition: opacity 0.5s ease;
 }
-h2 {
-    color: #333;
-}
-ul {
-    list-style: none;
-    padding: 0;
-}
-ul li {
-    padding: 5px 0;
-}
-footer {
-    background: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px;
-    margin-top: 20px;
+section.active {
+    opacity: 1;
 }
 
-/* About Section */
+/* About Section Styling */
 .about-section {
     margin: 40px 0;
 }
@@ -52,14 +47,71 @@ footer {
     gap: 20px;
 }
 
-/* Left Column: Photo */
 .about-photo img {
     width: 100%;
     max-width: 300px;
     border-radius: 8px;
 }
 
-/* Right Column: Text */
 .about-text {
     flex: 2;
+}
+
+/* Skills Section Styling */
+.section-skills {
+    background-color: #e0f7fa;
+}
+
+/* Expertise Section Styling */
+.section-expertise {
+    background-color: #fce4ec;
+}
+
+/* Professional Experience Section Styling */
+.section-experience {
+    background-color: #f3e5f5;
+}
+
+/* Languages Section Styling */
+.section-languages {
+    background-color: #e8f5e9;
+}
+
+/* Visa Section Styling */
+.section-visa {
+    background-color: #fff3e0;
+}
+
+/* Hobbies Section Styling */
+.section-hobbies {
+    background-color: #ede7f6;
+}
+
+/* Headings */
+h2 {
+    color: #333;
+}
+
+/* Lists */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    padding: 5px 0;
+}
+
+/* Footer Styling */
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+/* Smooth Scroll Effect */
+html {
+    scroll-behavior: smooth;
 }
