@@ -40,3 +40,26 @@ footer {
     padding: 10px;
     margin-top: 20px;
 }
+
+/* About Section */
+.about-section {
+    margin: 40px 0;
+}
+
+.about-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+/* Left Column: Photo */
+.about-photo img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 8px;
+}
+
+/* Right Column: Text */
+.about-text {
+    flex: 2;
+}
