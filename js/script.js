@@ -1,25 +1,25 @@
-// Function to update the footer year
 document.addEventListener("DOMContentLoaded", function() {
     const yearElement = document.getElementById('current-year');
     const currentYear = new Date().getFullYear();
     yearElement.textContent = currentYear;
-});
 
-// Function to make sections active gradually as they come into the viewport
-window.addEventListener('scroll', function() {
+    // Using IntersectionObserver for better scroll performance
     const sections = document.querySelectorAll('section');
-    const scrollPos = window.scrollY + window.innerHeight; // Calculate the bottom of the viewport
 
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active'); // Add 'active' when section comes into view
+            } else {
+                entry.target.classList.remove('active'); // Remove 'active' when section goes out of view
+            }
+        });
+    }, {
+        threshold: 0.3 // Trigger when 30% of the section is visible
+    });
+
+    // Observe each section
     sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.offsetHeight;
-        const sectionBottom = sectionTop + sectionHeight;
-
-        // Add 'active' class if the section is partially or fully in view
-        if (scrollPos >= sectionTop + sectionHeight / 3 && window.scrollY <= sectionBottom - sectionHeight / 3) {
-            section.classList.add('active');
-        } else {
-            section.classList.remove('active');
-        }
+        observer.observe(section);
     });
 });
