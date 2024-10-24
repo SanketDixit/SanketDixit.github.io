@@ -48,17 +48,20 @@ section {
     min-height: 80vh; /* Each section takes most of the viewport height */
     opacity: 0; /* Sections start fully transparent */
     transform: translateY(50px); /* Initial translation for sliding effect */
-    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out, filter 0.5s ease-out; /* Added transition for blur */
     background-color: #e8f5e9; /* Same background for all sections */
     border-radius: 8px;
     padding: 40px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    filter: blur(5px); /* Initially blurred */
 }
 
 section.active {
     opacity: 1; /* Fully visible when active */
-    transform: translateY(0); /* Slide into view */
+    transform: translateY(0); /* No translation when active */
+    filter: blur(0); /* Remove blur when active */
 }
+
 
 /* About Section Styling */
 .about-section {
