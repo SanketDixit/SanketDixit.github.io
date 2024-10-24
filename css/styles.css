@@ -19,6 +19,7 @@ header {
     position: sticky;
     top: 0;
     z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add a shadow to make the header stand out */
 }
 header h1 {
     margin: 0;
@@ -29,7 +30,8 @@ header h1 {
 .scroll-container {
     flex: 1;
     overflow-y: scroll;
-    scroll-snap-type: y mandatory; /* Enabling full-section snapping */
+    scroll-snap-type: y proximity; /* Smooth snapping */
+    scroll-behavior: smooth; /* Smooth scroll when snapping */
 }
 
 /* Container */
@@ -45,12 +47,15 @@ header h1 {
 section {
     padding: 20px 0;
     height: 100vh; /* Each section takes up full viewport height */
-    scroll-snap-align: start; /* Ensure each section snaps into place */
-    opacity: 0.3;
-    transition: opacity 0.5s ease;
+    scroll-snap-align: start;
+    opacity: 0.2; /* Start with lower opacity */
+    transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out; /* Smooth transition with added transform */
+    transform: translateY(20px); /* Initially translate sections slightly */
 }
+
 section.active {
-    opacity: 1;
+    opacity: 1; /* Fully visible when active */
+    transform: translateY(0); /* Reset translation for a natural slide-in effect */
 }
 
 /* About Section Styling */
