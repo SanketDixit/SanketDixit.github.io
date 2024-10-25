@@ -45,21 +45,21 @@ header h1 {
 
 /* Section Styling */
 section {
-    min-height: 80vh; /* Each section takes most of the viewport height */
+    min-height: 60vh; /* Reduced height to make sections less lengthy */
+    padding: 20px; /* Reduced padding for a tighter layout */
     opacity: 0; /* Sections start fully transparent */
-    transform: translateY(50px); /* Initial translation for sliding effect */
-    transition: opacity 0.5s ease-out, transform 0.5s ease-out, filter 0.5s ease-out; /* Added transition for blur */
-    background-color: #e8f5e9; /* Same background for all sections */
+    transform: translateY(30px); /* Slightly smaller translation for a smoother effect */
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out, filter 0.5s ease-out;
+    background-color: #e8f5e9;
     border-radius: 8px;
-    padding: 40px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     filter: blur(5px); /* Initially blurred */
 }
 
 section.active {
-    opacity: 1; /* Fully visible when active */
-    transform: translateY(0); /* No translation when active */
-    filter: blur(0); /* Remove blur when active */
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
 }
 
 
