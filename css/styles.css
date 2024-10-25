@@ -62,6 +62,17 @@ section.active {
     filter: blur(0);
 }
 
+ul li {
+    padding: 10px;
+    background-color: #f4f4f4;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    transition: background-color 0.3s ease;
+}
+
+ul li:hover {
+    background-color: #e0f7fa;
+}
 
 /* About Section Styling */
 .about-section {
