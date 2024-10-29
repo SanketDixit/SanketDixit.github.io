@@ -40,17 +40,8 @@ document.addEventListener("DOMContentLoaded", function() {
         nextButton.disabled = currentSlide === experienceSlides.length - 1;
 
         // Apply disabled styling class
-        if (prevButton.disabled) {
-            prevButton.classList.add('arrow-disabled');
-        } else {
-            prevButton.classList.remove('arrow-disabled');
-        }
-
-        if (nextButton.disabled) {
-            nextButton.classList.add('arrow-disabled');
-        } else {
-            nextButton.classList.remove('arrow-disabled');
-        }
+        prevButton.classList.toggle('arrow-disabled', prevButton.disabled);
+        nextButton.classList.toggle('arrow-disabled', nextButton.disabled);
     }
 
     function nextSlide() {
@@ -73,4 +64,24 @@ document.addEventListener("DOMContentLoaded", function() {
     // Add event listeners for carousel buttons
     document.getElementById("next-slide").addEventListener("click", nextSlide);
     document.getElementById("previous-slide").addEventListener("click", previousSlide);
+
+    // Scroll functionality to hide header sub-elements
+    const header = document.querySelector('header');
+    const headerSubtitle = document.querySelector('.header-subtitle');
+    const headerDescription = document.querySelector('.header-description');
+
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 50) { // Adjust scroll threshold as needed
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+
+        // Hide sub-elements based on the 'scrolled' class
+        const isScrolled = header.classList.contains('scrolled');
+        headerSubtitle.style.opacity = isScrolled ? '0' : '1';
+        headerSubtitle.style.visibility = isScrolled ? 'hidden' : 'visible';
+        headerDescription.style.opacity = isScrolled ? '0' : '1';
+        headerDescription.style.visibility = isScrolled ? 'hidden' : 'visible';
+    });
 });
