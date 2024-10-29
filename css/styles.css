@@ -45,15 +45,15 @@ header h1 {
 
 /* Section Styling */
 section {
-    min-height: 60vh; /* Reduced height to make sections less lengthy */
-    padding: 20px; /* Reduced padding for a tighter layout */
-    opacity: 0; /* Sections start fully transparent */
-    transform: translateY(30px); /* Slightly smaller translation for a smoother effect */
+    min-height: 60vh;
+    padding: 20px;
+    opacity: 0;
+    transform: translateY(30px);
     transition: opacity 0.5s ease-out, transform 0.5s ease-out, filter 0.5s ease-out;
     background-color: #e8f5e9;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    filter: blur(5px); /* Initially blurred */
+    filter: blur(5px);
 }
 
 section.active {
@@ -72,6 +72,45 @@ ul li {
 
 ul li:hover {
     background-color: #e0f7fa;
+}
+
+.icon {
+    width: 50px;
+    height: 50px;
+    vertical-align: middle;
+}
+
+.icon-small {
+    width: 24px;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+/* Section Nationality and Visa Styling */
+.section-nationality-visa {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.section-nationality-visa h2 {
+    margin-bottom: 16px;
+}
+
+.nationality,
+.visa-status {
+    margin-bottom: 12px;
+}
+
+.nationality h3,
+.visa-status h3 {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1em;
+    margin-bottom: 5px;
 }
 
 /* About Section Styling */
@@ -95,12 +134,12 @@ ul li:hover {
     flex: 2;
 }
 
-/* Remove individual backgrounds for consistency */
+/* Skills, Expertise, Experience, Languages, and Hobbies Sections Styling */
 .section-skills,
 .section-expertise,
 .section-experience,
 .section-languages,
-.section-visa,
+.section-nationality-visa,
 .section-hobbies {
     background-color: transparent;
 }
@@ -114,4 +153,235 @@ footer {
     position: relative;
     bottom: 0;
     width: 100%;
+}
+
+/* Language List Styling */
+.language-list {
+    list-style: none;
+    padding: 0;
+}
+
+.language-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.language-list li span {
+    width: 100px;
+    font-weight: bold;
+}
+
+/* Star Rating Styling */
+.stars {
+    display: inline-block;
+    position: relative;
+    font-size: 20px;
+    color: #ddd;
+}
+
+.stars::before {
+    content: "★★★★★";
+    color: #ddd;
+}
+
+.stars::after {
+    content: "★★★★★";
+    color: #5107ff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    width: 0;
+}
+
+.stars[data-rating="5"]::after {
+    width: 100%;
+}
+.stars[data-rating="4.5"]::after {
+    width: 90%;
+}
+.stars[data-rating="4"]::after {
+    width: 80%;
+}
+.stars[data-rating="3.5"]::after {
+    width: 70%;
+}
+.stars[data-rating="3"]::after {
+    width: 60%;
+}
+.stars[data-rating="2.5"]::after {
+    width: 50%;
+}
+.stars[data-rating="2"]::after {
+    width: 40%;
+}
+.stars[data-rating="1.5"]::after {
+    width: 30%;
+}
+.stars[data-rating="1"]::after {
+    width: 20%;
+}
+.stars[data-rating="0.5"]::after {
+    width: 10%;
+}
+
+/* Section Hobbies Styling */
+.section-hobbies {
+    padding: 20px;
+    background-color: #f0f4f8;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.section-hobbies h2 {
+    margin-bottom: 16px;
+}
+
+.hobby-item {
+    margin-bottom: 12px;
+}
+
+.hobby-item h3 {
+    font-weight: bold;
+    font-size: 1.1em;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.hobby-item p {
+    color: #555;
+    margin-bottom: 8px;
+}
+
+/* Section Professional Experience Carousel Styling */
+.section-experience-carousel {
+    padding: 20px;
+    background-color: #f0f4f8;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.section-experience-carousel h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Carousel Wrapper */
+.carousel-wrapper {
+    position: relative;
+    overflow: hidden; /* Hide overflowing content */
+}
+
+/* Carousel Container */
+.carousel-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow-x: auto; /* Allow horizontal scrolling */
+    scroll-snap-type: x mandatory; /* Snap to each slide */
+    gap: 10px;
+    padding: 10px 0; /* Add some padding for aesthetics */
+}
+
+/* Carousel Slide */
+.carousel-slide {
+    scroll-snap-align: start; /* Align each slide at the start */
+    min-width: 90%; /* Adjust width to ensure visibility */
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column; /* Ensure vertical layout for content */
+}
+
+/* Experience Details Layout */
+.experience-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.experience-left {
+    font-size: 1em;
+    color: #333;
+}
+
+.experience-left p {
+    margin: 5px 0;
+}
+
+.experience-right ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.experience-right ul li {
+    margin: 5px 0;
+    color: #252525;
+}
+
+/* Carousel Navigation Buttons */
+#previous-slide, #next-slide {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none; /* Remove background */
+    border: none;
+    color: rgba(0, 0, 0, 0.3);
+    font-size: 2em; /* Adjust font size for visible arrow icons */
+    cursor: pointer;
+    transition: color 0.3s ease;
+    z-index: 2; /* Ensure arrows are above the carousel content */
+    padding: 10px; /* Add padding around the buttons */
+}
+
+#previous-slide::before, #next-slide::before {
+    font-size: 24px;
+    color: #ccc;
+    transition: color 0.3s ease;
+}
+
+#previous-slide {
+    left: 10px; /* Position on the left */
+    z-index: 3; /* Ensure higher z-index */
+}
+
+#next-slide {
+    right: 10px; /* Position on the right */
+    z-index: 3; /* Ensure higher z-index */
+}
+
+#previous-slide:hover, #next-slide:hover {
+    color: #333; /* Arrow color on hover */
+}
+
+#previous-slide:hover::before, #next-slide:hover::before {
+    color: #007BFF; /* Arrow color on hover */
+}
+
+.arrow-disabled {
+    pointer-events: none; /* Disable interaction when disabled */
+    color: rgba(0, 0, 0, 0.1);
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .carousel-slide {
+        min-width: 100%; /* Adjust width for smaller screens */
+    }
+
+    .experience-details {
+        grid-template-columns: 1fr; /* Single column for mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 2em; /* Responsive header size */
+    }
 }
