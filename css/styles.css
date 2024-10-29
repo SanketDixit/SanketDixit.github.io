@@ -289,12 +289,11 @@ footer {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     display: none;
     width: 100%;
-    position: relative; /* To ensure z-index works correctly */
+    transition: opacity 0.5s ease-in-out; /* Smooth transition */
 }
 
 .carousel-slide.active {
     display: block;
-    transition: opacity 0.5s ease-in-out;
 }
 
 /* Experience Details Layout */
@@ -338,12 +337,6 @@ footer {
     z-index: 2; /* Ensure arrows are above the carousel content */
 }
 
-#previous-slide::before, #next-slide::before {
-    font-size: 24px;
-    color: #ccc;
-    transition: color 0.3s ease;
-}
-
 #previous-slide {
     left: 10px; /* Position on the left */
 }
@@ -354,10 +347,6 @@ footer {
 
 #previous-slide:hover, #next-slide:hover {
     color: #333; /* Arrow color on hover */
-}
-
-#previous-slide:hover::before, #next-slide:hover::before {
-    color: #007BFF; /* Arrow color on hover */
 }
 
 .arrow-disabled {
