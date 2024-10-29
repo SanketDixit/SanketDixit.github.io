@@ -269,33 +269,32 @@ footer {
     margin-bottom: 20px;
 }
 
-/* Carousel Wrapper */
-.carousel-wrapper {
-    position: relative;
-    overflow: hidden; /* Hide overflowing content */
-}
-
-/* Carousel Container */
 .carousel-container {
     display: flex;
     align-items: center;
+    justify-content: center;
     position: relative;
-    overflow-x: auto; /* Allow horizontal scrolling */
-    scroll-snap-type: x mandatory; /* Snap to each slide */
+    overflow-x: hidden;
+    scroll-snap-type: x mandatory;
     gap: 10px;
-    padding: 10px 0; /* Add some padding for aesthetics */
+    z-index: 1; /* Ensure the carousel content is below the arrows */
 }
 
-/* Carousel Slide */
 .carousel-slide {
-    scroll-snap-align: start; /* Align each slide at the start */
-    min-width: 90%; /* Adjust width to ensure visibility */
+    scroll-snap-align: start;
+    min-width: 90%;
     background-color: #ffffff;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column; /* Ensure vertical layout for content */
+    display: none;
+    width: 100%;
+    position: relative; /* To ensure z-index works correctly */
+}
+
+.carousel-slide.active {
+    display: block;
+    transition: opacity 0.5s ease-in-out;
 }
 
 /* Experience Details Layout */
@@ -337,7 +336,6 @@ footer {
     cursor: pointer;
     transition: color 0.3s ease;
     z-index: 2; /* Ensure arrows are above the carousel content */
-    padding: 10px; /* Add padding around the buttons */
 }
 
 #previous-slide::before, #next-slide::before {
@@ -348,12 +346,10 @@ footer {
 
 #previous-slide {
     left: 10px; /* Position on the left */
-    z-index: 3; /* Ensure higher z-index */
 }
 
 #next-slide {
     right: 10px; /* Position on the right */
-    z-index: 3; /* Ensure higher z-index */
 }
 
 #previous-slide:hover, #next-slide:hover {
@@ -365,23 +361,6 @@ footer {
 }
 
 .arrow-disabled {
-    pointer-events: none; /* Disable interaction when disabled */
-    color: rgba(0, 0, 0, 0.1);
-}
-
-/* Media Queries for Responsiveness */
-@media (max-width: 768px) {
-    .carousel-slide {
-        min-width: 100%; /* Adjust width for smaller screens */
-    }
-
-    .experience-details {
-        grid-template-columns: 1fr; /* Single column for mobile */
-    }
-}
-
-@media (max-width: 480px) {
-    header h1 {
-        font-size: 2em; /* Responsive header size */
-    }
+    pointer-events: none; /* Disable pointer events */
+    color: rgba(0, 0, 0, 0.2); /* Change color for disabled state */
 }
